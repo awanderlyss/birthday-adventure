@@ -33,7 +33,7 @@ function light_func(){
     case 'trapped':
       document.getElementById('lightDiv').innerHTML = '<p class="info-text">Congratulations, you "correctly" guessed the first piece to the puzzle. This HINT has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_loc_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('lights-answer', answer);
-      add_page_link(0);
+
       break;
     default:
       document.getElementById('light-ans').value = '';
@@ -68,7 +68,6 @@ function date_func(){
       document.getElementById('endDateDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">Use this time frame to help you put the puzzle together. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_bike_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('startDate-answer', '12/8');
       localStorage.setItem('endDate-answer', '12/10');
-      add_page_link(2);
     } else{
       document.getElementById('endDateAns').value = '';
     }
@@ -82,7 +81,6 @@ function bike_func(){
   if ((answer == 'bike') || (answer == 'mountain bike') || (answer == 'mountain bikes') || (answer == 'bikes')) {
     document.getElementById('bikeDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You just got another piece to the puzzle. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_sleep_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
     localStorage.setItem('bike-answer', answer);
-    add_page_link(3);
   } else{
     document.getElementById('bikeAns').value = '';
   }
