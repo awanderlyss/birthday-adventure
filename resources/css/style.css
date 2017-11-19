@@ -25,3 +25,6 @@ h4{font-family: 'Spectral', serif;text-transform:uppercase;font-weight:bold;marg
 .symbol{font-size:2rem;line-height:2rem;margin:0;}
 .img-equat{display:flex;flex-direction:row;justify-content:space-evenly;align-items:center;padding-bottom:1.5rem}
 .batman-img{background:rgba(255,255,255,.25);border-radius:35%}
+
+/*********** date.html **********/
+#startDateDiv .info-text{padding:1rem 0 0}
