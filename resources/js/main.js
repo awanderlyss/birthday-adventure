@@ -14,6 +14,10 @@ function next_bike_func(){
   location.href = "bike.html";
 }
 
+function next_sleep_func(){
+  location.href = "sleep.html";
+}
+
 function light_func(){
   var answer = document.getElementById('light-ans').value.toLowerCase();
   switch (answer) {
@@ -26,6 +30,7 @@ function light_func(){
     case 'trapped':
       document.getElementById('lightDiv').innerHTML = '<p class="info-text">Congratulations!! You guessed "corerctly"!! This HINT has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_loc_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('lights-answer', answer);
+      var retrievedObject = localStorage.getItem('lights-answer');
       document.getElementById('clueBank').append(retrievedObject);
       break;
     default:
@@ -58,8 +63,8 @@ function location_func(){
 function date_func(){
   var startDate = document.getElementById('startDateAns').value;
   var endDate = document.getElementById('endDateAns').value;
-  if ((startDate == '12/8') || (startDate == '12/08') || (startDate == 'December 8') || (startDate == 'December 8th') || (startDate == 'Dec 8') || (startDate == 'Dec 8th')) {
-    if ((endDate == '12/10') || (endDate == 'December 10th') || (endDate == 'December 10') || (endDate == 'Dec 10th') || (endDate == 'Dec 10')) {
+  if ((startDate == '12/8') || (startDate == '12/08') || (startDate == 'December 8') || (startDate == 'december 8') || (startDate == 'December 8th') || (startDate == 'Dec 8') || (startDate == 'dec 8') || (startDate == 'Dec 8th')) {
+    if ((endDate == '12/10') || (endDate == 'December 10th') || (endDate == 'December 10') || (endDate == 'december 10') || (endDate == 'Dec 10th') || (endDate == 'Dec 10') || (endDate == 'dec 10')) {
       document.getElementById('startDateDiv').innerHTML = '';
       document.getElementById('endDateDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You have successfully found the coordinates to the approximate location of your adventure! This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_bike_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('startDate-answer', startDate);
@@ -73,5 +78,17 @@ function date_func(){
     }
   } else{
     document.getElementById('startDateAns').value = '';
+  }
+}
+
+function bike_func(){
+  var answer = document.getElementById('bikeAns').value.toLowerCase();
+  if ((answer == 'bike') || (answer == 'mountain bike')) {
+    document.getElementById('bikeDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You just got another piece to the puzzle. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_sleep_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
+    localStorage.setItem('bike-answer', answer);
+    var retrievedObject = localStorage.getItem('bike-answer');
+    document.getElementById('clueBank').append(retrievedObject);
+  } else{
+    document.getElementById('bikeAns').value = '';
   }
 }

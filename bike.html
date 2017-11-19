@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Adventure</title>
+
+    <meta name="description" content="A birthday for the books!">
+    <meta name="author" content="Alyssa & Robin">
+
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Spectral:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+
+    <script src="https://use.fontawesome.com/d66b1a0842.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+          <div class="row column">
+            <div id="clueBank"></div>
+          </div>
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+          <div class="title-bar hide-for-large">
+            <div class="title-bar-left">
+              <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i></button>
+              <span class="title-bar-title">Clue Bank</span>
+            </div>
+          </div>
+          <div class="primary">
+            <img class="bike-header" src="resources/images/bike-header.jpg" alt="">
+            <div id="bikeDiv" class="info-cont">
+              <p class="info-text">E.T.'s transport vessel was affixed to one. We have 3.</p>
+              <input id="bikeAns" type="text" placeholder="Answer">
+              <button id="bikeBtn" onclick="bike_func()" class="hollow button alert info-btn">Submit <i class="fa fa-bicycle" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="resources/js/main.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
