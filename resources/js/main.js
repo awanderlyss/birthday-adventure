@@ -114,16 +114,22 @@ if (localStorage) {
   document.getElementById('lightClue').appendChild(p);
   var retrievedObject = localStorage.getItem('lat-answer');
   var p = document.createElement('p');
-  p.innerHTML = 'Lat: ' + retrievedObject;
+  if (retrievedObject) {
+    p.innerHTML = 'Lat: ' + retrievedObject;
+  }
   document.getElementById('locationClue').appendChild(p);
   var retrievedObject = localStorage.getItem('long-answer');
   var p = document.createElement('p');
-  p.innerHTML = 'Long: ' + retrievedObject;
+  if (retrievedObject) {
+    p.innerHTML = 'Long: ' + retrievedObject;
+  }
   document.getElementById('locationClue').appendChild(p);
   var retrievedStart = localStorage.getItem('startDate-answer');
   var retrievedEnd = localStorage.getItem('endDate-answer');
   var p = document.createElement('p');
-  p.innerHTML = 'Date: ' + retrievedStart + ' - ' + retrievedEnd;
+  if (retrievedStart) {
+    p.innerHTML = 'Date: ' + retrievedStart + ' - ' + retrievedEnd;
+  }
   document.getElementById('dateClue').appendChild(p);
   var retrievedObject = localStorage.getItem('bike-answer');
   var p = document.createElement('p');
