@@ -28,18 +28,12 @@ function light_func(){
     case 'ptrdape':
       document.getElementById('lightDiv').innerHTML = '<p class="info-text">The scrambled letters have been saved to the <span class="clue-text">Clue Bank</span>!</p> <button id="light-btn" onclick="next_loc_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('lights-answer', answer);
-      var retrievedObject = localStorage.getItem('lights-answer');
-      var p = document.createElement('p');
-      p.innerHTML = retrievedObject;
-      document.getElementById('lightClue').appendChild(p);
+
       break;
     case 'trapped':
       document.getElementById('lightDiv').innerHTML = '<p class="info-text">Congratulations, you "correctly" guessed the first piece to the puzzle. This HINT has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_loc_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('lights-answer', answer);
-      var retrievedObject = localStorage.getItem('lights-answer');
-      var p = document.createElement('p');
-      p.innerHTML = retrievedObject;
-      document.getElementById('lightClue').appendChild(p);
+      add_page_link(0);
       break;
     default:
       document.getElementById('light-ans').value = '';
@@ -50,12 +44,12 @@ function location_func(){
   var lat = document.getElementById('latLocAns').value;
   var long = document.getElementById('longLocAns').value;
   if ((lat == '40.6909n') || (lat == '40.6909N') || (lat == '40.6909 N') || (lat == '40.6909 n')) {
-    if ((long == '74.9216w') || (long == '74.9216W') || (long == '74.9216 W') || (long == '74.9216 w')) {
+    if ((long == '74.9216w') || (long == '74.9216W') || (long == '74.9216 W') || (long == '74.9216 w') || (long == '74.9216west') || (long == '74.9216 west')) {
       document.getElementById('latLocDiv').innerHTML = '';
       document.getElementById('longLocDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You have successfully found the coordinates to the approximate location of your adventure! This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_date_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('lat-answer', lat);
       localStorage.setItem('long-answer', long);
-
+      add_page_link(1);
     } else{
       document.getElementById('longLocAns').value = '';
     }
@@ -74,7 +68,7 @@ function date_func(){
       document.getElementById('endDateDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">Use this time frame to help you put the puzzle together. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_bike_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('startDate-answer', '12/8');
       localStorage.setItem('endDate-answer', '12/10');
-
+      add_page_link(2);
     } else{
       document.getElementById('endDateAns').value = '';
     }
@@ -85,10 +79,10 @@ function date_func(){
 
 function bike_func(){
   var answer = document.getElementById('bikeAns').value.toLowerCase();
-  if ((answer == 'bike') || (answer == 'mountain bike')) {
+  if ((answer == 'bike') || (answer == 'mountain bike') || (answer == 'mountain bikes') || (answer == 'bikes')) {
     document.getElementById('bikeDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You just got another piece to the puzzle. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_sleep_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
     localStorage.setItem('bike-answer', answer);
-
+    add_page_link(3);
   } else{
     document.getElementById('bikeAns').value = '';
   }
@@ -99,13 +93,23 @@ function sleep_func(){
   if ((answer == 'nazareth') || (answer == 'nasarat')) {
     document.getElementById('sleepDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You just got another piece to the puzzle. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="exit_func()" class="hollow button alert info-btn">Next <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
     localStorage.setItem('sleep-answer', answer);
-
+    add_page_link(4);
   } else{
     document.getElementById('sleepAns').value = '';
   }
 }
 
-var i;
+function add_page_link(pageNum){
+  var pageCont = $('#clueBank');
+  var childCont = pageCont.children();
+  var desiredCont = childCont.slice(0,pageNum + 1);
+  console.log(desiredCont);
+  desiredCont.each(function(index){
+    var htmlFileNames = ['light.html', 'coors.html', 'famous.html', 'et.html', 'jesus.html'];
+    var wrapHtml = '<a href="' + htmlFileNames[index] + '"></a>';
+    $(this).wrap(wrapHtml);
+  });
+}
 
 if (localStorage) {
   var retrievedObject = localStorage.getItem('lights-answer');
