@@ -14,10 +14,10 @@ html,body{width:100vw;height:100vh;margin:0;font-family: 'Spectral', serif;font-
 .clue{background:#050C13;padding:.5rem 1rem;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
 .clue p:not(:first-of-type){padding-left:1rem;font-size:16px}
 .main-nav{text-align:center}
-.main-nav a{color:#C92714;text-decoration:underline;}
+.main-nav a{color:#FF1515;text-decoration:underline;}
 
 /*********** index.html **********/
-
+.initials{color:#FF1515;text-shadow:0 0 5px #FF1515;padding:0 .1rem}
 
 /*********** light.html **********/
 .lights-header{width:100%;}
