@@ -24,30 +24,30 @@
 
         <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
           <div class="row column">
-            <div id="clueBank"></div>
+            <div id="clueBank" class="clue-bank-cont">
+              <div class="clue-cont"><div id="lightClue" class="clue"><p>Clue #1</p></div></div>
+              <div class="clue-cont"><div id="locationClue" class="clue"><p>Clue #2</p></div></div>
+              <div class="clue-cont"><div id="dateClue" class="clue"><p>Clue #3</p></div></div>
+              <div class="clue-cont"><div id="bikeClue" class="clue"><p>Clue #4</p></div></div>
+              <div class="clue-cont"><div id="sleepClue" class="clue"><p>Clue #5</p></div></div>
+            </div>
           </div>
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="title-bar hide-for-large">
             <div class="title-bar-left">
-              <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i></button>
-              <span class="title-bar-title">Clue Bank</span>
+              <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i> <span class="title-bar-title">Clue Bank</span></button>
             </div>
           </div>
           <div class="primary">
-            <img class="location-header" src="resources/images/date-header.jpg" alt="">
-            <div id="startDateDiv" class="info-cont">
-              <div class="info-text">
-                <p>John Glen, John Lennon, and Dwight D Eisenhower.</p>
-                <p>All share something in common! Can you figure out what it may be?</p>
-              </div>
-              <input id="startDateAns" type="text" placeholder="Answer">
+            <div style="width:100%;height:0;padding-bottom:50%;position:relative;">
+              <iframe src="https://giphy.com/embed/3o7TKRn4YTixiV06qc" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             </div>
-            <div id="endDateDiv" class="info-cont">
-              <p class="info-text">Hugh Hefner publishes the first Playboy magazine.</p>
-              <input id="endDateAns" type="text" placeholder="Answer">
-              <button id="dateBtn" onclick="date_func()" class="hollow button alert info-btn">Submit <i class="fa fa-bicycle" aria-hidden="true"></i></button>
+            <div id="sleepDiv" class="info-cont">
+              <p class="info-text">According to tradition, the angel Gabriel told Mary that she would conceive by the power of the Holy Spirit here.</p>
+              <input id="sleepAns" type="text" placeholder="Answer">
+              <button id="sleepBtn" onclick="sleep_func()" class="hollow button alert info-btn">Submit <i class="fa fa-bicycle" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>

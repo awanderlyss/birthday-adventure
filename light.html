@@ -24,15 +24,20 @@
 
         <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
           <div class="row column">
-            <div id="clueBank"></div>
+            <div id="clueBank" class="clue-bank-cont">
+              <div class="clue-cont"><div id="lightClue" class="clue"><p>Clue #1</p></div></div>
+              <div class="clue-cont"><div id="locationClue" class="clue"><p>Clue #2</p></div></div>
+              <div class="clue-cont"><div id="dateClue" class="clue"><p>Clue #3</p></div></div>
+              <div class="clue-cont"><div id="bikeClue" class="clue"><p>Clue #4</p></div></div>
+              <div class="clue-cont"><div id="sleepClue" class="clue"><p>Clue #5</p></div></div>
+            </div>
           </div>
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="title-bar hide-for-large">
             <div class="title-bar-left">
-              <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i></button>
-              <span class="title-bar-title">Clue Bank</span>
+              <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i><span class="title-bar-title">Clue Bank</span></button>
             </div>
           </div>
           <div class="primary">
@@ -40,7 +45,7 @@
         			<img id="bannerImage" class="lights-header" src="resources/images/lights/alphabet6.jpg" title="6">
         		</div>
             <div id="lightDiv" class="info-cont">
-              <p class="info-text">Unscramble Will's message from the upside down. If you get stuck, submit the letters in the order that they light up!</p>
+              <p class="info-text">Unscramble Will's message from The Upside Down. If you get stuck, submit the letters in the order that they light up!</p>
               <input id="light-ans" type="text" placeholder="Answer">
               <button id="light-btn" onclick="light_func()" class="hollow button alert info-btn">Submit <i class="fa fa-bicycle" aria-hidden="true"></i></button>
             </div>

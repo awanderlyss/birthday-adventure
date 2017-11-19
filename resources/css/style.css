@@ -2,11 +2,16 @@ html,body{width:100vw;height:100vh;margin:0;font-family: 'Spectral', serif;font-
 .primary{background:#04050B;min-height:100vh}
 .stranger-header{width:100%}
 .info-cont{width:90%;margin: 0 auto;text-align:center;}
-.info-text{text-align:justify;margin:0;padding:1rem 0 2rem;}
+.info-text{text-align:center;margin:0;padding:1rem 0 2rem;}
 .info-btn{font-weight:bold;text-transform:uppercase;font-family: 'Spectral', serif;}
 .title-bar-left{width:100%}
 .title-bar-left button{width:100%;text-align:left;}
 .title-bar-title{padding-left:1rem;text-transform:uppercase;font-weight:bold;}
+.off-canvas .column{padding:0 !important}
+.clue-bank-cont p{margin:0;text-transform:uppercase;font-weight:bold}
+.clue-cont{padding:1rem}
+.clue{background:#050C13;padding:.5rem 1rem;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+.clue p:not(:first-of-type){padding-left:1rem;font-size:16px}
 
 /*********** index.html **********/
 
