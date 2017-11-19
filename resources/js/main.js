@@ -18,6 +18,10 @@ function next_sleep_func(){
   location.href = "sleep.html";
 }
 
+function exit_func(){
+  location.href = "exit.html";
+}
+
 function light_func(){
   var answer = document.getElementById('light-ans').value.toLowerCase();
   switch (answer) {
@@ -90,5 +94,17 @@ function bike_func(){
     document.getElementById('clueBank').append(retrievedObject);
   } else{
     document.getElementById('bikeAns').value = '';
+  }
+}
+
+function sleep_func(){
+  var answer = document.getElementById('sleepAns').value.toLowerCase();
+  if ((answer == 'nazareth') || (answer == 'nasarat')) {
+    document.getElementById('sleepDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You just got another piece to the puzzle. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="exit_func()" class="hollow button alert info-btn">Next <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
+    localStorage.setItem('sleep-answer', answer);
+    var retrievedObject = localStorage.getItem('sleep-answer');
+    document.getElementById('clueBank').append('<li>'+retrievedObject+'</li>');
+  } else{
+    document.getElementById('sleepAns').value = '';
   }
 }
