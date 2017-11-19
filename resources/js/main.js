@@ -91,7 +91,7 @@ function sleep_func(){
   if ((answer == 'nazareth') || (answer == 'nasarat')) {
     document.getElementById('sleepDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">You just got another piece to the puzzle. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="exit_func()" class="hollow button alert info-btn">Next <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
     localStorage.setItem('sleep-answer', answer);
-    add_page_link(4);
+    localStorage.setItem('finished', 'finished');
   } else{
     document.getElementById('sleepAns').value = '';
   }

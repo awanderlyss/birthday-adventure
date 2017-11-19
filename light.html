@@ -65,7 +65,11 @@
     <script src="resources/js/lights.js"></script>
     <script>
       $(document).foundation();
-      add_page_link(0);
+      if (localStorage.getItem("finished") !== null) {
+        add_page_link(4);
+      } else {
+        add_page_link(0);
+      }
     </script>
   </body>
 </html>
