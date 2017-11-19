@@ -114,20 +114,20 @@ if (localStorage) {
   document.getElementById('lightClue').appendChild(p);
   var retrievedObject = localStorage.getItem('lat-answer');
   var p = document.createElement('p');
-  if (retrievedObject) {
+  if (retrievedObject !== null) {
     p.innerHTML = 'Lat: ' + retrievedObject;
   }
   document.getElementById('locationClue').appendChild(p);
   var retrievedObject = localStorage.getItem('long-answer');
   var p = document.createElement('p');
-  if (retrievedObject) {
+  if (retrievedObject !== null) {
     p.innerHTML = 'Long: ' + retrievedObject;
   }
   document.getElementById('locationClue').appendChild(p);
   var retrievedStart = localStorage.getItem('startDate-answer');
   var retrievedEnd = localStorage.getItem('endDate-answer');
   var p = document.createElement('p');
-  if (retrievedStart) {
+  if (retrievedStart !== null) {
     p.innerHTML = 'Date: ' + retrievedStart + ' - ' + retrievedEnd;
   }
   document.getElementById('dateClue').appendChild(p);
