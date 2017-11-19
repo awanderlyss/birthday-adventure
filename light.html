@@ -21,12 +21,28 @@
 
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+          <div class="row column">
+            <div id="clueBank"></div>
+          </div>
+        </div>
+
         <div class="off-canvas-content" data-off-canvas-content>
+          <div class="title-bar hide-for-large">
+            <div class="title-bar-left">
+              <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i></button>
+              <span class="title-bar-title">Clue Bank</span>
+            </div>
+          </div>
           <div class="primary">
-            <img class="stranger-header" src="resources/images/stranger-thangs.png" alt="">
-            <div class="info-cont">
-              <p class="info-text">The following are a series of clues, which when put together will lead to an amazing <span class="intials">A</span>dventu<span class="intials">R</span>e. Prepare to discover an incredible <span class="intials">J</span>ourney...</p>
-              <button id="enter" onclick="enter_func()" class="hollow button alert info-btn">Enter <i class="fa fa-bicycle" aria-hidden="true"></i></button>
+            <div class="lights-cont">
+        			<img id="bannerImage" class="lights-header" src="resources/images/lights/alphabet6.jpg" title="6">
+        		</div>
+            <div id="lightDiv" class="info-cont">
+              <p class="info-text">Unscramble Will's message from the upside down. If you get stuck, submit the letters in the order that they light up!</p>
+              <input id="light-ans" type="text" placeholder="Answer">
+              <button id="light-btn" onclick="light_func()" class="hollow button alert info-btn">Submit <i class="fa fa-bicycle" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -36,6 +52,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="resources/js/main.js"></script>
+    <script src="resources/js/lights.js"></script>
     <script>
       $(document).foundation();
     </script>

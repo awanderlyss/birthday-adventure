@@ -1,5 +1,13 @@
-html,body{width:100vw;height:100vh;margin:0;overflow:hidden;background:#04050B;font-family: 'Spectral', serif;font-size:16px;}
+html,body{width:100vw;height:100vh;margin:0;font-family: 'Spectral', serif;font-size:18px;font-weight:bold}
+.primary{background:#04050B;height:100vh}
 .stranger-header{width:100%}
 .info-cont{width:80%;margin: 0 auto;text-align:center;}
-.info-text{color:#fff;font-size:20px;text-align:justify;margin:0;padding:1rem 0 5rem}
-.info-btn{padding:1rem 2rem;font-weight:bold;text-transform:uppercase;background-color:#fff;border-radius:.5rem;font-size:3rem;font-family: 'Spectral', serif;}
+.info-text{color:#fff;;text-align:justify;margin:0;padding:1rem 0 2rem;}
+.info-btn{font-weight:bold;text-transform:uppercase;font-family: 'Spectral', serif;}
+
+
+/*********** index.html **********/
+
+
+
+.lights-header{width:100%;}
