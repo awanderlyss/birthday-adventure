@@ -41,8 +41,11 @@
 
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="title-bar hide-for-large">
-            <div class="title-bar-left">
+            <div class="title-bar-left clue-bank">
               <button class="" type="button" data-open="my-info"><i class="fa fa-search" aria-hidden="true"></i><span class="title-bar-title">Clue Bank</span></button>
+            </div>
+            <div class="title-bar-left countdown-cont has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Time left until all hints disappear. You will be left with only the clues you've guessed!" data-position="bottom" data-alignment="center">
+              <div id="countdown" class="countdown"></div>
             </div>
           </div>
           <div class="primary">
@@ -55,7 +58,7 @@
               <input id="startDateAns" type="text" placeholder="Answer">
             </div>
             <div id="endDateDiv" class="info-cont">
-              <p class="info-text">Hugh Hefner publishes the first Playboy magazine.</p>
+              <p class="info-text">Hugh Hefner publishes the first Playboy magazine, when?</p>
               <input id="endDateAns" type="text" placeholder="Answer">
               <button id="dateBtn" onclick="date_func()" class="hollow button alert info-btn">Submit <i class="fa fa-bicycle" aria-hidden="true"></i></button>
             </div>

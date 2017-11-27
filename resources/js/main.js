@@ -22,6 +22,39 @@ function exit_func(){
   location.href = "exit.html";
 }
 
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 1, 2017 23:59:59").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  var daysCont = '<div class="time-cont"><p class="time-header">Days</p><p>'+ days +'</p></div>';
+  var hoursCont = '<div class="time-cont"><p class="time-header">Hours</p><p>'+ hours +'</p></div>';
+  var minutesCont = '<div class="time-cont"><p class="time-header">Minutes</p><p>'+ minutes +'</p></div>';
+  var secondsCont = '<div class="time-cont"><p class="time-header">Seconds</p><p>'+ seconds +'</p></div>';
+
+  document.getElementById("countdown").innerHTML = daysCont + hoursCont + minutesCont + secondsCont;
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
 function light_func(){
   var answer = document.getElementById('light-ans').value.toLowerCase();
   switch (answer) {
@@ -63,7 +96,7 @@ function date_func(){
   var startDate = document.getElementById('startDateAns').value;
   var endDate = document.getElementById('endDateAns').value;
   if ((startDate == '12/8') || (startDate == '12/08') || (startDate == 'December 8') || (startDate == 'december 8') || (startDate == 'December 8th') || (startDate == 'Dec 8') || (startDate == 'dec 8') || (startDate == 'Dec 8th')) {
-    if ((endDate == '12/10') || (endDate == 'December 10th') || (endDate == 'December 10') || (endDate == 'december 10') || (endDate == 'Dec 10th') || (endDate == 'Dec 10') || (endDate == 'dec 10')) {
+    if ((endDate == '12/10') || (endDate == 'December 10th') || (endDate == 'December 10') || (endDate == 'december 10') || (endDate == 'Dec 10th') || (endDate == 'Dec 10') || (endDate == 'dec 10th')) {
       document.getElementById('startDateDiv').innerHTML = '';
       document.getElementById('endDateDiv').innerHTML = '<p class="info-text" style="padding:1rem 0 2rem">Use this time frame to help you put the puzzle together. This clue has been saved to the <span class="clue-text">Clue Bank</span>!</p><button id="light-btn" onclick="next_bike_func()" class="hollow button alert info-btn">Next Clue <i class="fa fa-bicycle" aria-hidden="true"></i></button>';
       localStorage.setItem('startDate-answer', '12/8');
